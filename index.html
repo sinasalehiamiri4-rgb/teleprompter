@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e1620">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="تلپرامپتر">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="192x192" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+<title>تلپرامپتر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&family=Noto+Naskh+Arabic:wght@400;600&family=Amiri:wght@400;700&family=Cairo:wght@400;700&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Vazirmatn";font-weight:400;font-display:swap;src:local("Vazirmatn")}
+@font-face{font-family:"Vazirmatn";font-weight:600 800;font-display:swap;src:local("Vazirmatn Bold")}
+:root{
+  --ink:#0e1620;--panel:#162230;--raise:#1e2f40;--line:#2b3d4f;--text:#f2ede1;--muted:#94a7b8;
+  --amber:#f2c94c;--danger:#e8705f;--ok:#6fd49a;
+  --sbg:#0f1720;--hot:#fff7d1;--dim:#4a5e72;--dimc:#a9b4be;--ov:.55;--fs:56px;--tw:84%;--lh:1.8;
+  color-scheme:dark;padding-top:env(safe-area-inset-top,0px)
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+html,body{margin:0;min-height:100%}
+body{background:var(--ink);color:var(--text);font-family:"Vazirmatn","Segoe UI",Tahoma,"Noto Sans Arabic",system-ui,sans-serif;line-height:1.8}
+.hidden{display:none!important}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--raise);color:var(--text);padding:8px 16px;transition:background .15s,border-color .15s}
+button:hover{border-color:#41586f}
+button.pri{background:var(--amber);border-color:var(--amber);color:#261f05;font-weight:800}
+button.pri:hover{background:#f7d467}
+button.danger{color:var(--danger)}
+button.link{background:none;border:none;color:var(--amber);text-decoration:underline;text-underline-offset:4px;padding:6px 0;min-height:0}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+input[type=text],textarea,select{width:100%;background:var(--ink);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-height:44px}
+select{width:auto}
+textarea{min-height:38vh;font-size:1.1rem;resize:vertical;line-height:1.9}
+.small{font-size:.88rem;color:var(--muted);margin:0 0 10px}
+
+/* لغزنده‌ها */
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:30px;background:transparent;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:var(--line)}
+input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:var(--line)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--amber);border:4px solid var(--ink);box-shadow:0 0 0 1px var(--amber);margin-top:-9px}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--amber);border:4px solid var(--ink);box-shadow:0 0 0 1px var(--amber)}
+.ctl{margin:6px 0 12px}
+.ctl-h{display:flex;justify-content:space-between;gap:10px;font-size:.95rem}
+.ctl-h b{color:var(--amber);font-weight:600;font-size:.88rem}
+/* کلیدها */
+.tog{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;cursor:pointer}
+.tog input{-webkit-appearance:none;appearance:none;width:46px;height:27px;border-radius:14px;background:var(--line);position:relative;cursor:pointer;flex:none;margin:0;transition:background .2s}
+.tog input::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:21px;height:21px;border-radius:50%;background:#fff;transition:transform .2s}
+.tog input:checked{background:var(--amber)}
+.tog input:checked::after{transform:translateX(-19px)}
+input[type=color]{width:52px;height:40px;padding:3px;background:var(--ink);border:1px solid var(--line);border-radius:10px;cursor:pointer}
+
+/* ---------- صفحه‌ی اول ---------- */
+#setup{max-width:1120px;margin:0 auto;padding:22px clamp(14px,4vw,32px) 110px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:44px;height:44px;flex:none}
+h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;margin:0;line-height:1.3}
+.lead{color:var(--muted);margin:8px 0 18px;max-width:46ch;font-size:clamp(1rem,2.4vw,1.15rem)}
+#demo{background:var(--sbg);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,5vw,40px) 16px;text-align:center;font-size:clamp(1.3rem,4.4vw,2.2rem);line-height:1.9;position:relative;overflow:hidden;font-weight:600}
+#demo::before{content:"";position:absolute;inset-inline:0;top:50%;height:2.3em;transform:translateY(-50%);background:color-mix(in srgb,var(--hot) 7%,transparent);border-block:1px solid color-mix(in srgb,var(--hot) 22%,transparent)}
+#demo span{position:relative;color:var(--dim);transition:color .25s}
+#demo span.on{color:var(--hot)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(14px,3vw,22px)}
+.card h2{font-size:1.05rem;font-weight:800;margin:0 0 10px}
+.lib-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.lib-head h2{margin:0}
+#lib{display:flex;flex-direction:column;gap:6px;max-height:188px;overflow-y:auto;margin-bottom:12px}
+.item{display:flex;justify-content:space-between;gap:12px;text-align:right;width:100%;background:var(--ink)}
+.item span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item small{color:var(--muted);white-space:nowrap}
+.item.on{border-color:var(--amber);background:var(--raise)}
+#title{margin-bottom:8px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;margin-top:10px}
+.meta div{display:flex;gap:8px}
+.side{display:flex;flex-direction:column;gap:14px}
+details.card{padding:0}
+details.card>summary{cursor:pointer;padding:14px clamp(14px,3vw,22px);font-weight:800;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.card>summary::-webkit-details-marker{display:none}
+details.card>summary::after{content:"+";color:var(--amber);font-size:1.4rem;line-height:1}
+details.card[open]>summary::after{content:"–"}
+details.card>div{padding:0 clamp(14px,3vw,22px) 16px}
+#presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+#presets button{display:flex;align-items:center;gap:8px;padding:6px 12px;min-height:40px;background:var(--ink)}
+.sw{width:20px;height:20px;border-radius:50%;border:1px solid #fff4}
+.row2{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-bottom:12px}
+.row2 label{display:flex;align-items:center;gap:10px;color:var(--muted)}
+#pv{background:var(--sbg);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;font-size:26px;line-height:1.9}
+#pv .d{color:var(--dim)}#pv .h{color:var(--hot)}
+.code{font-size:clamp(1.8rem,8vw,2.6rem);font-weight:800;letter-spacing:.1em;color:var(--amber);text-align:center;margin:8px 0}
+.linkrow{display:flex;gap:8px;margin-bottom:8px}
+.linkrow input{direction:ltr;font-size:.85rem}
+.keys{color:var(--muted);font-size:.9rem;margin:22px 0 4px}
+#start{width:100%;font-size:1.2rem;padding:14px}
+#dock{position:fixed;inset-inline:0;bottom:0;z-index:20;padding:26px 16px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--ink) 55%,transparent)}
+#dock button{width:100%;font-size:1.2rem;padding:14px;max-width:520px;margin:0 auto;display:block}
+@media(min-width:900px){
+  .layout{grid-template-columns:minmax(0,1.45fr) minmax(330px,1fr);align-items:start}
+  .side{position:sticky;top:18px}
+  #dock{display:none}
+  #setup{padding-bottom:48px}
+}
+@media(max-width:899px){#start{display:none}}
+
+/* ---------- صحنه‌ی خواندن ---------- */
+#stage{position:fixed;inset:0;background:var(--sbg);overflow:hidden}
+#cam{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:0;background:#000}
+#cam.flip{transform:scaleX(-1)}
+#stage.cam #cam{display:block}
+#shade{position:absolute;inset:0;background:var(--sbg);z-index:1}
+#stage.cam #shade{opacity:var(--ov)}
+#guide{position:absolute;inset-inline:0;top:calc(40% - var(--fs)*(var(--lh) + .1)/2);height:calc(var(--fs)*(var(--lh) + .1));z-index:1;pointer-events:none;background:color-mix(in srgb,var(--hot) 7%,transparent);border-block:1px solid color-mix(in srgb,var(--hot) 22%,transparent)}
+#stage.noguide #guide{display:none}
+#view{position:absolute;inset:0;overflow:hidden;z-index:2;cursor:pointer}
+#text{position:absolute;left:0;right:0;top:0;padding:38vh calc((100% - var(--tw))/2) 70vh;white-space:pre-wrap;text-align:center;font-weight:600;line-height:var(--lh);will-change:transform}
+.w{color:var(--dim);transition:color .25s;cursor:pointer}
+.w.hot{color:var(--hot)}
+#stage.cam .w{color:var(--dimc);text-shadow:0 0 6px var(--sbg),0 0 14px var(--sbg),0 2px 2px var(--sbg)}
+#stage.cam .w.hot{color:var(--hot)}
+#stage.mirror #view{transform:scaleX(-1)}
+#prog{position:absolute;top:0;right:0;height:4px;background:var(--amber);width:0;z-index:7}
+#count{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;font-size:30vmin;font-weight:800;color:var(--amber);background:rgba(10,15,22,.82)}
+#bar{position:absolute;z-index:8;inset-inline:max(10px,calc((100% - 660px)/2));bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(12,18,25,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:20px;padding:10px;transition:opacity .3s}
+#bar.dim{opacity:0;pointer-events:none}
+#bar:hover,#bar:focus-within{opacity:1;pointer-events:auto}
+.barrow{display:flex;gap:8px;justify-content:center}
+.barrow button{flex:1 1 0;min-width:0;padding:8px 6px;white-space:nowrap}
+.barrow .pri{flex:1.6 1 0;font-size:1.05rem}
+#barSet{padding:6px 8px 4px;margin-bottom:8px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:0 22px;max-height:46vh;overflow-y:auto}
+@media(min-width:560px){#barSet{grid-template-columns:1fr 1fr}}
+#rec.on{background:var(--danger);border-color:var(--danger);color:#fff}
+#fab{position:absolute;z-index:8;inset-inline-end:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;min-height:0;border-radius:50%;padding:0;background:rgba(12,18,25,.7);opacity:0;pointer-events:none;font-size:.8rem}
+#bar.dim ~ #fab{opacity:.65;pointer-events:auto}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(120px + env(safe-area-inset-bottom,0px));z-index:30;background:#0b121a;color:var(--text);border:1px solid var(--amber);border-radius:14px;padding:10px 16px;max-width:92vw;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center;text-align:center}
+#toast a{color:var(--amber)}
+#toast button{min-height:36px;padding:4px 12px}
+
+/* ---------- ریموت ---------- */
+#remote{max-width:560px;margin:0 auto;padding:22px 16px 28px;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+#rstat{display:inline-flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 14px;margin:10px 0 14px;align-self:flex-start;color:var(--muted)}
+#rstat::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--muted)}
+#rstat.ok::before{background:var(--ok)}
+#rstat.bad::before{background:var(--danger)}
+#rconnect{display:flex;gap:8px;margin-bottom:14px}
+#rcode{max-width:230px;text-align:center;letter-spacing:.08em}
+#now{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center;font-size:clamp(1.2rem,5vw,1.6rem);min-height:6em;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+#now .c{color:var(--amber);font-weight:800}
+#now .o{color:var(--muted)}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;flex:1;align-content:start}
+.rgrid button{padding:18px 8px;font-size:1.05rem}
+.rgrid .big{grid-column:1/-1;font-size:1.5rem;padding:30px}
+#rseek{height:40px}
+
+.fitrow{display:flex;gap:8px;align-items:center}.fitrow input{width:84px;text-align:center}.fitrow button{flex:1}
+.btnrow{display:flex;flex-wrap:wrap;gap:8px}
+#toast button{min-height:36px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div id="setup">
+  <header>
+    <div class="brand">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="12" fill="#1e2f40"/><rect x="9" y="12" width="26" height="4" rx="2" fill="#4a5e72"/><rect x="9" y="20" width="26" height="5.5" rx="2.75" fill="#f2c94c"/><rect x="9" y="29" width="17" height="4" rx="2" fill="#4a5e72"/></svg>
+      <h1>تلپرامپتر</h1>
+    </div>
+    <p class="lead">متنت رو بذار، سرعت رو انتخاب کن و بخون. هر کلمه همون لحظه‌ای روشن می‌شه که باید بخونیش. وسط متن گم شدی؟ روی یه کلمه بزن تا از همون‌جا ادامه بده.</p>
+    <div id="demo" aria-hidden="true"></div>
+  </header>
+
+  <div class="layout">
+    <section class="card" aria-label="متن‌ها">
+      <div class="lib-head"><h2>متن‌های من</h2><button id="newScript">+ متن جدید</button></div>
+      <div id="lib"></div>
+      <input type="text" id="title" placeholder="عنوان متن (اختیاری)" aria-label="عنوان متن">
+      <textarea id="src" placeholder="متن خودت رو اینجا بنویس یا بچسبون…" aria-label="متن"></textarea>
+      <p class="small" style="margin:8px 0 0">نشانه‌ها: «[مکث]» یا «[مکث ۲]» یه مکث ۱ یا ۲ ثانیه‌ای می‌ذاره و «//» یه خط جدید با مکث کوتاه.</p>
+      <div class="meta">
+        <span class="small" id="wc" style="margin:0"></span>
+        <div><button id="dup">کپی این متن</button><button id="del" class="danger">حذف</button></div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="card">
+        <h2>خواندن</h2>
+        <div class="ctl"><div class="ctl-h"><span>سرعت</span><b id="speedO"></b></div><input type="range" id="speed" min="40" max="300" value="130"></div>
+        <div class="ctl"><div class="ctl-h"><span>اندازه‌ی حروف</span><b id="sizeO"></b></div><input type="range" id="size" min="28" max="120" value="56"></div>
+        <div class="ctl"><div class="ctl-h"><span>مکث نقطه و ویرگول</span><b id="pmO"></b></div><input type="range" id="pm" min="0" max="3" step="0.25" value="1"></div>
+        <div class="ctl"><div class="ctl-h"><span>زمان هدف</span></div>
+          <div class="fitrow"><input type="text" id="tm" inputmode="numeric" maxlength="3" placeholder="دقیقه" aria-label="دقیقه"><span>:</span><input type="text" id="ts" inputmode="numeric" maxlength="2" placeholder="ثانیه" aria-label="ثانیه"><button id="fitBtn">تنظیم سرعت</button></div>
+          <p class="small" id="fitMsg" style="margin:6px 0 0">مثلاً ۱:۳۰ بنویس تا سرعت طوری تنظیم بشه که متن توی ۱ دقیقه و ۳۰ ثانیه تموم بشه.</p></div>
+        <label class="tog"><span>وارونه (برای شیشه‌ی تلپرامپتر)</span><input type="checkbox" id="mirror"></label>
+        <label class="tog"><span>نوار راهنمای خواندن</span><input type="checkbox" id="guideOn"></label>
+      </section>
+
+      <details class="card">
+        <summary>رنگ و ظاهر</summary>
+        <div>
+          <div id="presets"></div>
+          <div class="row2">
+            <label>کلمه‌ی پررنگ <input type="color" id="chot"></label>
+            <label>پس‌زمینه <input type="color" id="cbg"></label>
+          </div>
+          <div class="row2"><label>فونت <select id="fontSel"></select></label></div>
+          <div class="ctl"><div class="ctl-h"><span>عرض خط</span><b id="twO"></b></div><input type="range" id="tw" min="40" max="100" step="2" value="84"></div>
+          <div class="ctl"><div class="ctl-h"><span>فاصله‌ی خطوط</span><b id="lhO"></b></div><input type="range" id="lh" min="1.2" max="2.4" step="0.1" value="1.8"></div>
+          <div id="pv"><span class="d">این کلمه‌ها</span> <span class="h">خونده</span> <span class="d">می‌شن</span></div>
+        </div>
+      </details>
+
+      <details class="card">
+        <summary>دوربین پشت متن</summary>
+        <div>
+          <p class="small">تصویر دوربین پشت متن میاد تا هم بخونی هم ضبط کنی. فیلم بدون متن و مثل دوربین معمولی (بدون آینه) ذخیره می‌شه. دوربین فقط وقتی آدرس صفحه امن باشه (با «https» شروع بشه) کار می‌کنه.</p>
+          <label class="tog"><span>دوربین روشن باشه</span><input type="checkbox" id="camOn"></label>
+          <div class="row2"><label>دوربین <select id="face"><option value="user">جلو (سلفی)</option><option value="environment">پشت</option></select></label></div>
+          <div class="ctl"><div class="ctl-h"><span>تیرگی پس‌زمینه</span><b id="ovO"></b></div><input type="range" id="ov" min="0" max="90" value="55"></div>
+          <label class="tog"><span>با شروع متن، ضبط هم شروع بشه</span><input type="checkbox" id="auto"></label>
+        </div>
+      </details>
+
+      <details class="card">
+        <summary>کنترل از گوشی دوم</summary>
+        <div>
+          <p class="small">گوشی اصلی جلوت باشه و با یه گوشی دیگه توقف، ادامه و سرعت رو کنترل کن. متن به گوشی دوم نمی‌رسه، فقط فرمان‌ها می‌رن. هر دو دستگاه باید اینترنت داشته باشن.</p>
+          <button id="hostBtn">ساخت کد اتصال</button>
+          <div id="hostInfo" class="hidden">
+            <div class="code" id="hostCode"></div>
+            <div class="linkrow"><input type="text" id="hostLink" readonly aria-label="لینک ریموت"><button id="copyLink">کپی</button></div>
+            <p class="small">روی گوشی دوم این لینک رو باز کن، یا همین صفحه رو باز کن، «ریموت» رو بزن و کد رو وارد کن. با «ساخت کد جدید» اتصال قبلی قطع می‌شه.</p>
+          </div>
+          <p class="small" id="hostMsg" style="margin-top:8px"></p>
+        </div>
+      </details>
+
+      <details class="card">
+        <summary>پشتیبان‌گیری از متن‌ها</summary>
+        <div>
+          <p class="small">متن‌ها فقط توی حافظه‌ی همین مرورگر ذخیره می‌شن و اگه اطلاعات سایت پاک بشه از بین می‌رن. هر از گاهی یه فایل پشتیبان بگیر. موقع بارگذاری، متن‌های فایل به متن‌های فعلی اضافه می‌شن و چیزی پاک نمی‌شه.</p>
+          <div class="btnrow"><button id="exportBtn">ذخیره‌ی همه‌ی متن‌ها در فایل</button><button id="importBtn">بارگذاری از فایل</button></div>
+          <input type="file" id="importFile" accept=".json,application/json" class="hidden">
+        </div>
+      </details>
+
+      <button class="pri" id="start">شروع</button>
+    </aside>
+  </div>
+
+  <p class="keys">حین خواندن: کلید فاصله = توقف/ادامه · فلش بالا و پایین = سرعت · فلش چپ و راست = پرش ۵ کلمه · اسکیپ = برگشت. کلیکر بلوتوثی: «صفحه‌ی پایین» = توقف/ادامه، «صفحه‌ی بالا» = ۵ کلمه عقب. روی هر کلمه بزنی از همون کلمه ادامه می‌ده، روی فضای خالی بزنی توقف/ادامه می‌شه.</p>
+  <button class="link" id="toRemote">این گوشی ریموته؟</button>
+  <div style="margin-top:6px"><button class="link hidden" id="installBtn">نصب برنامه روی این دستگاه</button>
+  <p class="small hidden" id="iosHint">روی آیفون: دکمه‌ی اشتراک‌گذاری مرورگر رو بزن و «افزودن به صفحه‌ی اصلی» رو انتخاب کن تا برنامه تمام‌صفحه باز بشه.</p></div>
+</div>
+<div id="dock"><button class="pri" id="start2">شروع</button></div>
+
+<main id="remote" class="hidden">
+  <h1>ریموت</h1>
+  <div id="rstat">به گوشی اصلی وصل نیستی.</div>
+  <div id="rconnect">
+    <input type="text" id="rcode" placeholder="کد ۱۰ رقمی" maxlength="16" inputmode="numeric" autocomplete="off" aria-label="کد اتصال">
+    <button class="pri" id="rgo">اتصال</button>
+  </div>
+  <div id="now">—</div>
+  <input type="range" id="rseek" min="0" max="1000" value="0" aria-label="جای متن">
+  <div class="rgrid">
+    <button class="pri big" data-c="toggle" id="rplay">شروع</button>
+    <button data-c="back">۵ کلمه عقب</button>
+    <button data-c="fwd">۵ کلمه جلو</button>
+    <button data-c="slow">آهسته‌تر</button>
+    <button data-c="fast">تندتر</button>
+    <button data-c="smaller">حروف کوچک‌تر</button>
+    <button data-c="bigger">حروف بزرگ‌تر</button>
+    <button data-c="restart">از اول</button>
+    <button data-c="rec" id="rrec" class="hidden">ضبط</button>
+  </div>
+  <button class="link" id="rexit">برگشت به صفحه‌ی اصلی</button>
+</main>
+
+<div id="stage" class="hidden">
+  <video id="cam" playsinline muted autoplay></video>
+  <div id="shade"></div>
+  <div id="guide"></div>
+  <div id="prog"></div>
+  <div id="view"><div id="text" dir="auto"></div></div>
+  <div id="count" class="hidden">۳</div>
+  <div id="bar">
+    <div id="barSet" class="hidden">
+      <div class="ctl"><div class="ctl-h"><span>سرعت</span><b id="speed2O"></b></div><input type="range" id="speed2" min="40" max="300"></div>
+      <div class="ctl"><div class="ctl-h"><span>اندازه</span></div><input type="range" id="size2" min="28" max="120"></div>
+      <div class="ctl"><div class="ctl-h"><span>مکث</span></div><input type="range" id="pm2" min="0" max="3" step="0.25"></div>
+      <div class="ctl hidden" id="ov2L"><div class="ctl-h"><span>تیرگی پس‌زمینه</span></div><input type="range" id="ov2" min="0" max="90"></div>
+      <div class="ctl"><div class="ctl-h"><span>عرض خط</span></div><input type="range" id="tw2" min="40" max="100" step="2"></div>
+      <div class="ctl"><div class="ctl-h"><span>فاصله‌ی خطوط</span></div><input type="range" id="lh2" min="1.2" max="2.4" step="0.1"></div>
+    </div>
+    <div class="barrow">
+      <button class="pri" id="pause">توقف</button>
+      <button id="restart">از اول</button>
+      <button id="rec" class="hidden">● ضبط</button>
+      <button id="setBtn" aria-expanded="false">تنظیم</button>
+      <button id="back">برگشت</button>
+    </div>
+  </div>
+  <button id="fab" aria-label="توقف یا ادامه">توقف</button>
+</div>
+<div id="toast" class="hidden" role="status"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const FA='۰۱۲۳۴۵۶۷۸۹';
+const faStr = s => String(s).replace(/\d/g,d=>FA[d]);
+const fa = n => faStr(n);
+const fad = n => faStr(String(+n)).replace('.','٫');
+const toLat = s => String(s).replace(/[۰-۹]/g,d=>FA.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+const src=$('src'), speed=$('speed'), size=$('size'), pm=$('pm'), mirror=$('mirror'), ov=$('ov');
+const stage=$('stage'), view=$('view'), txt=$('text'), bar=$('bar'), count=$('count'), prog=$('prog'), cam=$('cam'), fab=$('fab');
+let words=[], pauses=[], hards=[], idx=0, tIn=0, shown=-1, pos=0, running=false, last=0, raf=0, dimTimer=0;
+let counting=false, cdTimer=0, session=0;
+const inStage=()=>!stage.classList.contains('hidden');
+
+/* ================= تنظیمات ================= */
+const FONTS={
+  vazir:{n:'وزیرمتن',css:'"Vazirmatn","Segoe UI",Tahoma,"Noto Sans Arabic",sans-serif',w:600},
+  naskh:{n:'نسخ',css:'"Noto Naskh Arabic",Tahoma,serif',w:600},
+  amiri:{n:'امیری',css:'"Amiri",Tahoma,serif',w:700},
+  cairo:{n:'قاهره',css:'"Cairo",Tahoma,sans-serif',w:700},
+  lalezar:{n:'لاله‌زار',css:'"Lalezar",Tahoma,sans-serif',w:400},
+  system:{n:'فونت سیستم',css:'Tahoma,"Segoe UI",sans-serif',w:700}
+};
+const PRESETS={
+  night:{n:'شب',bg:'#0f1720',hot:'#fff7d1'},
+  black:{n:'مشکی و زرد',bg:'#000000',hot:'#ffe14d'},
+  paper:{n:'کاغذ',bg:'#f5f0e1',hot:'#1b1b1b'},
+  green:{n:'سبز',bg:'#07140c',hot:'#8dffa6'},
+  blue:{n:'آبی',bg:'#0a1f44',hot:'#ffffff'}
+};
+const S={v:130,z:56,m:false,pm:1,bg:'#0f1720',hot:'#fff7d1',font:'vazir',cam:false,face:'user',ov:55,auto:false,guide:true,tw:84,lh:1.8};
+try{const o=JSON.parse(localStorage.getItem('tp3')||'{}'); if(o.v)S.v=+o.v; if(o.z)S.z=+o.z; S.m=!!o.m;}catch(e){}
+try{Object.assign(S,JSON.parse(localStorage.getItem('tp4_set')||'{}'));}catch(e){}
+
+function save(){
+  S.v=+speed.value; S.z=+size.value; S.m=mirror.checked; S.pm=+pm.value;
+  S.bg=$('cbg').value; S.hot=$('chot').value; S.font=$('fontSel').value;
+  S.cam=$('camOn').checked; S.face=$('face').value; S.ov=+ov.value; S.auto=$('auto').checked; S.guide=$('guideOn').checked; S.tw=+$('tw').value; S.lh=+$('lh').value;
+  try{localStorage.setItem('tp4_set',JSON.stringify(S));}catch(e){}
+}
+
+/* ================= رنگ و فونت ================= */
+function mix(a,b,t){
+  const p=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+  const x=p(a), y=p(b);
+  return '#'+x.map((v,i)=>Math.round(v*(1-t)+y[i]*t).toString(16).padStart(2,'0')).join('');
+}
+function applyTheme(){
+  const bg=$('cbg').value, hot=$('chot').value, f=FONTS[$('fontSel').value]||FONTS.vazir;
+  const r=document.documentElement.style;
+  r.setProperty('--sbg',bg); r.setProperty('--hot',hot);
+  r.setProperty('--dim',mix(bg,hot,.35)); r.setProperty('--dimc',mix(bg,hot,.62));
+  [txt,$('pv'),$('demo')].forEach(el=>{el.style.fontFamily=f.css;el.style.fontWeight=f.w;});
+  if(inStage()&&words.length){pos=target(curWord());draw();}
+}
+Object.entries(FONTS).forEach(([k,f])=>{const o=document.createElement('option');o.value=k;o.textContent=f.n;$('fontSel').appendChild(o);});
+Object.entries(PRESETS).forEach(([k,p])=>{
+  const b=document.createElement('button'); b.type='button';
+  const sw=document.createElement('span'); sw.className='sw'; sw.style.background='linear-gradient(90deg,'+p.bg+' 50%,'+p.hot+' 50%)';
+  b.append(sw,p.n);
+  b.onclick=()=>{$('cbg').value=p.bg;$('chot').value=p.hot;applyTheme();save();};
+  $('presets').appendChild(b);
+});
+['cbg','chot','fontSel'].forEach(id=>$(id).addEventListener('input',()=>{applyTheme();save();}));
+
+/* ================= مقادیر نمایشی و هماهنگی لغزنده‌ها ================= */
+function refresh(){
+  $('speedO').textContent=fa(speed.value)+' کلمه در دقیقه';
+  $('speed2O').textContent=fa(speed.value);
+  $('sizeO').textContent=fa(size.value)+' پیکسل';
+  $('pmO').textContent=+pm.value===0?'خاموش':fa(+pm.value)+' برابر';
+  $('ovO').textContent=fa(ov.value)+'٪';
+  $('twO').textContent=fa($('tw').value)+'٪'; $('lhO').textContent=fad($('lh').value);
+  const r=document.documentElement.style;
+  r.setProperty('--ov',ov.value/100); r.setProperty('--fs',size.value+'px');
+  r.setProperty('--tw',$('tw').value+'%'); r.setProperty('--lh',$('lh').value);
+  txt.style.fontSize=size.value+'px';
+  stage.classList.toggle('noguide',!$('guideOn').checked);
+  updateWc();
+  if(inStage()&&words.length){pos=target(curWord());draw();}
+}
+[['speed','speed2'],['size','size2'],['pm','pm2'],['ov','ov2'],['tw','tw2'],['lh','lh2']].forEach(([a,b])=>{
+  const A=$(a),B=$(b);
+  const h=e=>{A.value=e.target.value;B.value=e.target.value;refresh();save();};
+  A.addEventListener('input',h); B.addEventListener('input',h);
+});
+function setVal(id,v){
+  const el=$(id); v=Math.max(+el.min,Math.min(+el.max,v));
+  el.value=v; $(id+'2').value=v; refresh(); save();
+}
+[mirror,$('camOn'),$('face'),$('auto')].forEach(el=>el.addEventListener('input',save));
+$('guideOn').addEventListener('input',()=>{refresh();save();});
+
+/* ================= چند متن ================= */
+let lib={list:[],cur:null};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+/* تحلیل متن: کلمه‌ها، مکث‌ها و نشانه‌های [مکث] و // */
+function scan(text){
+  text=text.replace(/\[\s*مکث\s*([0-9۰-۹٠-٩.]*)\s*\]/g,(m,n)=>' \u0001'+(toLat(n)||'1')+'\u0001 ');
+  const out=[]; let lastW=null;
+  text.split(/(\s+)/).forEach(p=>{
+    if(!p) return;
+    if(/^\s+$/.test(p)){out.push({type:'ws',t:p});return;}
+    if(p[0]==='\u0001'){if(lastW) lastW.hard+=Math.min(10,parseFloat(p.slice(1))||1);return;}
+    if(p==='//'){if(lastW){lastW.hard+=.75;out.push({type:'ws',t:'\n'});}return;}
+    lastW={type:'w',t:p,pz:0,hard:0}; out.push(lastW);
+  });
+  out.forEach((e,k)=>{
+    if(e.type!=='w') return;
+    let j=k+1,after=''; while(out[j]&&out[j].type==='ws'){after+=out[j].t;j++;}
+    if(/[.!?؟…]["»')]?$/.test(e.t)) e.pz=.5; else if(/[,،;؛:]["»')]?$/.test(e.t)) e.pz=.25;
+    if(/\n/.test(after)) e.pz+=.25;
+  });
+  return out;
+}
+let _sc={t:null,v:null};
+function stats(text){
+  if(_sc.t===text) return _sc.v;
+  let n=0,P=0,H=0; scan(text).forEach(e=>{if(e.type==='w'){n++;P+=e.pz;H+=e.hard;}});
+  _sc={t:text,v:{n,P,H}}; return _sc.v;
+}
+const countWords=t=>stats(t).n;
+const estSecs=(st,sp,pmv)=>st.n*60/sp+st.P*pmv+st.H;
+function fmt(secs){const m=Math.floor(secs/60),s=secs%60;return (m?fa(m)+' دقیقه ':'')+(s||!m?fa(s)+' ثانیه':'');}
+const curScript=()=>lib.list.find(s=>s.id===lib.cur);
+function saveLib(){try{localStorage.setItem('tp4_lib',JSON.stringify(lib));}catch(e){}}
+function loadLib(){
+  try{const j=JSON.parse(localStorage.getItem('tp4_lib')||'null'); if(j&&Array.isArray(j.list)&&j.list.length) lib=j;}catch(e){}
+  if(!lib.list.length){
+    let t=''; try{t=JSON.parse(localStorage.getItem('tp3')||'{}').t||'';}catch(e){}
+    lib.list=[{id:uid(),title:'',text:t}];
+  }
+  if(!curScript()) lib.cur=lib.list[0].id;
+}
+function scriptName(s){return s.title.trim()||s.text.trim().split('\n')[0].slice(0,28)||'متن بدون عنوان';}
+function renderLib(){
+  const box=$('lib'); box.textContent='';
+  lib.list.forEach(s=>{
+    const b=document.createElement('button'); b.type='button'; b.className='item'+(s.id===lib.cur?' on':'');
+    if(s.id===lib.cur) b.setAttribute('aria-current','true');
+    const t=document.createElement('span'); t.textContent=scriptName(s);
+    const m=document.createElement('small'); m.textContent=fa(countWords(s.text))+' کلمه';
+    b.append(t,m); b.onclick=()=>openScript(s.id); box.appendChild(b);
+  });
+}
+function updateWc(){
+  const st=stats(src.value), secs=Math.round(estSecs(st,Math.max(1,+speed.value),+pm.value));
+  $('wc').textContent=fa(st.n)+' کلمه'+(st.n?' · حدود '+fmt(secs):'');
+}
+function openScript(id){
+  lib.cur=id; const s=curScript();
+  $('title').value=s.title; src.value=s.text; renderLib(); saveLib(); updateWc();
+}
+src.addEventListener('input',()=>{const s=curScript(); s.text=src.value; saveLib(); renderLib(); updateWc();});
+$('title').addEventListener('input',e=>{const s=curScript(); s.title=e.target.value; saveLib(); renderLib();});
+$('newScript').onclick=()=>{const s={id:uid(),title:'',text:''}; lib.list.unshift(s); openScript(s.id); src.focus();};
+$('dup').onclick=()=>{const c=curScript(); const s={id:uid(),title:(c.title||scriptName(c))+' (کپی)',text:c.text}; lib.list.unshift(s); openScript(s.id);};
+$('del').onclick=()=>{
+  const snap=JSON.stringify(lib), c=curScript(), name=scriptName(c);
+  if(lib.list.length===1){c.title='';c.text='';openScript(c.id);}
+  else{lib.list=lib.list.filter(s=>s.id!==c.id);openScript(lib.list[0].id);}
+  toast('«'+name+'» حذف شد.',{ms:9000,undo:()=>{lib=JSON.parse(snap);saveLib();openScript(lib.cur);}});
+};
+
+/* ================= نمونه‌ی زنده‌ی بالای صفحه ================= */
+(function demo(){
+  const d=$('demo'), ws='هر کلمه به موقع روشن می‌شه'.split(' ');
+  const spans=ws.map(w=>{const s=document.createElement('span');s.textContent=w;d.append(s,' ');return s;});
+  let i=2; const set=()=>spans.forEach((s,k)=>s.classList.toggle('on',k===i));
+  set();
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  setInterval(()=>{if(inStage()||document.hidden) return; i=(i+1)%spans.length; set();},520);
+})();
+
+/* ================= ساخت کلمه‌ها و مکث‌ها ================= */
+function build(){
+  txt.textContent=''; words=[]; pauses=[]; hards=[];
+  scan(src.value).forEach(e=>{
+    if(e.type==='ws') txt.appendChild(document.createTextNode(e.t));
+    else{
+      const sp=document.createElement('span'); sp.className='w'; sp.dataset.i=words.length; sp.textContent=e.t;
+      txt.appendChild(sp); words.push(sp); pauses.push(e.pz); hards.push(e.hard);
+    }
+  });
+  shown=-1;
+}
+const dur=i=>60/(+speed.value)+pauses[i]*(+pm.value)+hards[i];
+
+function mark(i){
+  if(i===shown) return;
+  if(shown>=0&&words[shown]) words[shown].className='w';
+  words[i].className='w hot'; shown=i;
+}
+function target(i){const w=words[i];return w.offsetTop+w.offsetHeight/2-view.clientHeight*0.4;}
+function curWord(){return Math.min(idx,words.length-1);}
+function draw(){
+  txt.style.transform='translateY('+(-pos)+'px)';
+  prog.style.width=Math.min(100,idx/words.length*100)+'%';
+}
+const finished=()=>idx>=words.length;
+function setPauseLabel(t){$('pause').textContent=t;fab.textContent=t;}
+
+/* ================= پخش ================= */
+function loop(t){
+  if(!running) return;
+  const dt=Math.min(0.1,(t-last)/1000); last=t;
+  tIn+=dt; let d=dur(idx);
+  while(tIn>=d){tIn-=d; idx++; if(idx>=words.length) break; d=dur(idx);}
+  if(finished()){
+    if(shown>=0&&words[shown]) words[shown].className='w'; shown=-1;
+    running=false; setPauseLabel('از اول');
+  } else mark(idx);
+  pos+=(target(curWord())-pos)*Math.min(1,dt*5);
+  draw();
+  if(running) raf=requestAnimationFrame(loop);
+}
+function play(){
+  if(!words.length) return;
+  if(finished()){restart();return;}
+  running=true; last=performance.now(); setPauseLabel('توقف'); raf=requestAnimationFrame(loop);
+}
+function pause(){running=false;cancelAnimationFrame(raf);setPauseLabel(finished()?'از اول':'ادامه');}
+function toggle(){if(counting) return; running?pause():play();}
+function seek(i){
+  if(!words.length) return;
+  idx=Math.max(0,Math.min(words.length-1,i)); tIn=0;
+  mark(idx); pos=target(idx); draw();
+}
+function jump(n){seek(Math.min(idx,words.length-1)+n);}
+function restart(){
+  if(counting||!words.length) return;
+  if(shown>=0&&words[shown]) words[shown].className='w'; shown=-1;
+  running=false; cancelAnimationFrame(raf); seek(0); play();
+}
+
+/* ================= لمس کلمه = پرش ================= */
+txt.addEventListener('click',e=>{
+  const w=e.target.closest('.w'); if(!w) return;
+  e.stopPropagation();
+  seek(+w.dataset.i); if(!running) play(); wake();
+});
+view.addEventListener('click',()=>{toggle();wake();});
+fab.addEventListener('touchstart',e=>e.stopPropagation(),{passive:true});
+fab.addEventListener('click',()=>{toggle();wake();});
+
+/* ================= دوربین و ضبط ================= */
+let stream=null, rec=null, recChunks=[], recTick=0, toastT=0;
+function toast(msg,o){
+  o=o||{}; const t=$('toast'); t.textContent='';
+  const sp=document.createElement('span'); sp.textContent=msg; t.appendChild(sp);
+  if(o.href){const a=document.createElement('a');a.href=o.href;a.download=o.name||'video';a.textContent='ذخیره‌ی فیلم';t.appendChild(a);}
+  if(o.file&&navigator.canShare&&navigator.canShare({files:[o.file]})){
+    const b=document.createElement('button');b.textContent='اشتراک / گالری';
+    b.onclick=()=>navigator.share({files:[o.file]}).catch(()=>{}); t.appendChild(b);
+  }
+  if(o.undo){const u=document.createElement('button');u.textContent='برگردان';u.onclick=()=>{o.undo();t.classList.add('hidden');};t.appendChild(u);}
+  if(o.sticky){const x=document.createElement('button');x.textContent='بستن';x.onclick=()=>t.classList.add('hidden');t.appendChild(x);}
+  t.classList.remove('hidden'); clearTimeout(toastT);
+  if(!o.sticky) toastT=setTimeout(()=>t.classList.add('hidden'),o.ms||4500);
+}
+async function startCam(){
+  stage.classList.remove('cam'); $('rec').classList.add('hidden'); $('ov2L').classList.add('hidden');
+  if(!$('camOn').checked) return;
+  if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)){toast('این مرورگر یا آدرس، دوربین رو پشتیبانی نمی‌کنه (آدرس صفحه باید امن باشه).');return;}
+  const face=$('face').value;
+  try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:face}},audio:true});}
+  catch(e){
+    try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:face}}}); toast('میکروفون در دسترس نیست؛ فیلم بدون صدا ضبط می‌شه.');}
+    catch(e2){stream=null; toast('دوربین باز نشد. اجازه‌ی دسترسی رو چک کن.'); return;}
+  }
+  cam.srcObject=stream; cam.classList.toggle('flip',face==='user'); cam.play().catch(()=>{});
+  stage.classList.add('cam'); $('rec').classList.remove('hidden'); $('ov2L').classList.remove('hidden');
+}
+function stopCam(){
+  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;}
+  cam.srcObject=null; stage.classList.remove('cam');
+}
+function startRec(){
+  if(!stream||rec) return;
+  if(!window.MediaRecorder){toast('این مرورگر ضبط رو پشتیبانی نمی‌کنه.');return;}
+  const mt=['video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(t=>MediaRecorder.isTypeSupported(t));
+  try{rec=new MediaRecorder(stream,mt?{mimeType:mt}:undefined);}catch(e){rec=null;toast('ضبط شروع نشد.');return;}
+  recChunks=[]; rec.ondataavailable=e=>{if(e.data&&e.data.size) recChunks.push(e.data);};
+  rec.onstop=saveRec; rec.start(1000);
+  const t0=Date.now(), b=$('rec'); b.classList.add('on');
+  const tick=()=>{const s=Math.floor((Date.now()-t0)/1000);b.textContent='■ '+faStr(Math.floor(s/60)+':'+String(s%60).padStart(2,'0'));};
+  tick(); recTick=setInterval(tick,1000);
+}
+function stopRec(){if(rec&&rec.state!=='inactive') rec.stop();}
+function toggleRec(){rec?stopRec():startRec();}
+function saveRec(){
+  clearInterval(recTick); $('rec').classList.remove('on'); $('rec').textContent='● ضبط';
+  const type=(rec&&rec.mimeType)||'video/webm'; rec=null;
+  if(!recChunks.length) return;
+  const ext=type.includes('mp4')?'mp4':'webm', name='تلپرامپتر-'+Date.now()+'.'+ext;
+  const blob=new Blob(recChunks,{type}), url=URL.createObjectURL(blob);
+  let file=null; try{file=new File([blob],name,{type});}catch(e){}
+  const a=document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove();
+  toast('فیلم ضبط شد.',{href:url,name,file,sticky:true});
+}
+$('rec').onclick=toggleRec;
+
+/* ================= روشن ماندن صفحه ================= */
+let wl=null;
+async function lockOn(){try{if('wakeLock' in navigator&&!wl){wl=await navigator.wakeLock.request('screen');wl.addEventListener('release',()=>{wl=null;});}}catch(e){}}
+function lockOff(){try{wl&&wl.release();}catch(e){} wl=null;}
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState!=='visible') return;
+  if(inStage()) lockOn();
+  if(rWant&&!$('remote').classList.contains('hidden')&&!(rConn&&rConn.open)) remoteConnect(rCode,true);
+});
+
+/* ================= شروع و خروج ================= */
+function runCount(){
+  return new Promise(res=>{
+    let n=3; count.textContent=fa(n); count.classList.remove('hidden'); counting=true;
+    cdTimer=setInterval(()=>{
+      n--;
+      if(n<=0){clearInterval(cdTimer);count.classList.add('hidden');counting=false;res();}
+      else count.textContent=fa(n);
+    },1000);
+  });
+}
+async function begin(){
+  if(inStage()) return;
+  if(!src.value.trim()){src.focus();src.placeholder='اول یه متن بنویس…';return;}
+  const tok=++session;
+  build(); idx=0; tIn=0; running=false;
+  $('setup').classList.add('hidden'); $('dock').classList.add('hidden'); stage.classList.remove('hidden');
+  stage.classList.toggle('mirror',mirror.checked);
+  bar.classList.remove('open','dim'); $('barSet').classList.add('hidden'); $('setBtn').setAttribute('aria-expanded','false');
+  applyTheme(); refresh(); mark(0); pos=target(0); draw();
+  setPauseLabel('توقف');
+  if(stage.requestFullscreen){stage.requestFullscreen().catch(()=>{});}
+  lockOn();
+  await startCam();
+  if(tok!==session) return;
+  await runCount();
+  if(tok!==session) return;
+  play(); wake();
+  if($('auto').checked&&stream) startRec();
+}
+function leave(){
+  session++; clearInterval(cdTimer); counting=false; count.classList.add('hidden');
+  pause(); stopRec(); stopCam(); lockOff();
+  stage.classList.add('hidden'); $('setup').classList.remove('hidden'); $('dock').classList.remove('hidden');
+  if(document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+}
+function wake(){
+  bar.classList.remove('dim'); clearTimeout(dimTimer);
+  dimTimer=setTimeout(()=>{if(running&&!bar.classList.contains('open')) bar.classList.add('dim');},3000);
+}
+
+$('start').onclick=begin; $('start2').onclick=begin;
+$('back').onclick=leave;
+$('pause').onclick=()=>{toggle();wake();};
+$('restart').onclick=restart;
+$('setBtn').onclick=()=>{
+  const open=bar.classList.toggle('open');
+  $('barSet').classList.toggle('hidden',!open); $('setBtn').setAttribute('aria-expanded',String(open)); wake();
+};
+stage.addEventListener('mousemove',wake); stage.addEventListener('touchstart',wake,{passive:true});
+window.addEventListener('resize',()=>{if(words.length&&inStage()){pos=target(curWord());draw();}});
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>{if(words.length&&inStage()){pos=target(curWord());draw();}});
+document.addEventListener('keydown',e=>{
+  if(!inStage()) return;
+  const k=e.key; let handled=true;
+  if(e.code==='Space'){if(document.activeElement&&document.activeElement.tagName==='BUTTON') document.activeElement.blur(); toggle();}
+  else if(k==='ArrowUp') setVal('speed',+speed.value+10);
+  else if(k==='ArrowDown') setVal('speed',+speed.value-10);
+  else if(k==='ArrowRight') jump(-5);
+  else if(k==='ArrowLeft') jump(5);
+  else if(k==='PageDown'||k==='MediaPlayPause') toggle();
+  else if(k==='PageUp'||k==='MediaTrackPrevious') jump(-5);
+  else if(k==='MediaTrackNext') jump(5);
+  else if(k==='Escape') leave();
+  else handled=false;
+  if(handled){e.preventDefault();wake();}
+});
+
+/* ================= ریموت (PeerJS) ================= */
+const PEER_URLS=[
+  'https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js',
+  'https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.4/peerjs.min.js'
+];
+function loadScript(u){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=u;s.onload=res;s.onerror=()=>{s.remove();rej(new Error('load'));};document.head.appendChild(s);});}
+function loadPeer(){
+  if(window.Peer) return Promise.resolve();
+  return PEER_URLS.reduce((p,u)=>p.catch(()=>loadScript(u)),Promise.reject(new Error('start')))
+    .then(()=>{if(!window.Peer) throw new Error('nopeer');});
+}
+const makeCode=()=>{const a=new Uint32Array(10);crypto.getRandomValues(a);return Array.from(a,v=>v%10).join('');};
+const cleanCode=c=>(c||'').replace(/[۰-۹]/g,d=>FA.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/\D/g,'');
+const showCode=c=>faStr(c.replace(/^(\d{3})(\d{3})(\d{4})$/,'$1-$2-$3'));
+const PERR={'network':'اینترنت قطع یا ناپایداره.','server-error':'سرور ریموت جواب نمی‌ده.','socket-error':'ارتباط با سرور ریموت قطع شد.','socket-closed':'ارتباط با سرور ریموت بسته شد.','browser-incompatible':'این مرورگر ریموت رو پشتیبانی نمی‌کنه.','webrtc':'اتصال مستقیم دو گوشی برقرار نشد.','invalid-id':'کد معتبر نیست.','peer-unavailable':'این کد پیدا نشد.'};
+const perr=t=>PERR[t]||'مشکلی پیش اومد.';
+const baseUrl=()=>location.href.split(/[?#]/)[0];
+
+/* --- سمت گوشی اصلی --- */
+let hostPeer=null, hostConn=null;
+const hostMsg=m=>{$('hostMsg').textContent=m;};
+async function hostStart(){
+  hostMsg('در حال ساخت کد…');
+  try{await loadPeer();}catch(e){hostMsg('اتصال به سرویس ریموت ممکن نشد. اینترنت رو چک کن.');return;}
+  if(hostPeer){try{hostPeer.destroy();}catch(e){}} hostConn=null;
+  const code=makeCode();
+  const peer=hostPeer=new Peer('tpr-'+code);
+  peer.on('open',()=>{
+    if(peer!==hostPeer) return;
+    $('hostCode').textContent=showCode(code); $('hostLink').value=baseUrl()+'?remote='+code;
+    $('hostInfo').classList.remove('hidden'); $('hostBtn').textContent='ساخت کد جدید'; hostMsg('منتظر گوشی دوم…');
+  });
+  peer.on('connection',c=>{
+    if(hostConn){try{hostConn.close();}catch(e){}}
+    hostConn=c;
+    c.on('open',()=>{hostMsg('گوشی دوم وصل شد ✓');pushState();});
+    c.on('data',onCmd);
+    c.on('close',()=>{if(hostConn===c){hostConn=null;hostMsg('گوشی دوم قطع شد؛ منتظر اتصال دوباره…');}});
+  });
+  peer.on('disconnected',()=>{if(peer===hostPeer){try{peer.reconnect();}catch(e){}}});
+  peer.on('error',err=>{
+    if(peer!==hostPeer) return;
+    if(err.type==='unavailable-id') hostStart();
+    else hostMsg('خطا در ریموت: '+perr(err.type));
+  });
+}
+function pushState(){
+  if(!hostConn||!hostConn.open) return;
+  const n=words.length, i=Math.min(idx,Math.max(0,n-1));
+  const range=(a,b)=>{const o=[];for(let k=Math.max(0,a);k<Math.min(n,b);k++)o.push(words[k].textContent);return o.join(' ');};
+  hostConn.send({t:'s',run:running,stage:inStage(),i:idx,n,spd:+speed.value,cam:!!stream,rec:!!rec,
+    b:n?range(i-4,i):'',c:n?words[i].textContent:'',a:n?range(i+1,i+7):''});
+}
+setInterval(pushState,500);
+function onCmd(m){
+  if(!m||typeof m!=='object') return;
+  if(m.c==='toggle'&&!inStage()){begin();return;}
+  if(!inStage()) return;
+  switch(m.c){
+    case 'toggle': toggle(); break;
+    case 'jump': if(typeof m.n==='number'&&!counting) jump(Math.max(-50,Math.min(50,m.n))); break;
+    case 'speed': if(typeof m.d==='number') setVal('speed',+speed.value+m.d); break;
+    case 'size': if(typeof m.d==='number') setVal('size',+size.value+m.d); break;
+    case 'restart': restart(); break;
+    case 'seek': if(typeof m.f==='number'&&!counting) seek(Math.floor(Math.max(0,Math.min(1,m.f))*(words.length-1))); break;
+    case 'rec': if(stream) toggleRec(); break;
+  }
+  wake(); pushState();
+}
+$('hostBtn').onclick=hostStart;
+$('copyLink').onclick=()=>{
+  const l=$('hostLink');
+  const done=()=>{$('copyLink').textContent='کپی شد ✓';setTimeout(()=>{$('copyLink').textContent='کپی';},1500);};
+  const old=()=>{l.select();try{document.execCommand('copy');}catch(e){} done();};
+  if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(l.value).then(done).catch(old); else old();
+};
+
+/* --- سمت گوشی دوم (ریموت) --- */
+let rPeer=null, rConn=null, rCode='', rWant=false, rEver=false, rRetry=0, rTimer=0, seeking=false, seekT=0, seekFree=0;
+function rstat(m,kind){const e=$('rstat');e.textContent=m;e.className=kind||'';}
+function showRemote(){$('setup').classList.add('hidden');$('dock').classList.add('hidden');$('remote').classList.remove('hidden');}
+function scheduleRetry(){
+  if(!rWant) return;
+  clearTimeout(rTimer); rRetry++;
+  rTimer=setTimeout(()=>remoteConnect(rCode,true),Math.min(8000,1500*rRetry));
+}
+async function remoteConnect(code,auto){
+  code=cleanCode(code); if(!code) return;
+  rCode=code; rWant=true; clearTimeout(rTimer);
+  rstat(auto?'در حال اتصال دوباره…':'در حال اتصال…');
+  try{await loadPeer();}catch(e){rstat('اتصال به سرویس ریموت ممکن نشد.','bad');scheduleRetry();return;}
+  if(!rWant) return;
+  if(rPeer){try{rPeer.destroy();}catch(e){}}
+  const peer=rPeer=new Peer();
+  peer.on('open',()=>{
+    if(peer!==rPeer) return;
+    const c=peer.connect('tpr-'+code,{reliable:true}); rConn=c;
+    const to=setTimeout(()=>{if(!c.open&&peer===rPeer){rstat('وصل نشد؛ دوباره تلاش می‌کنم…','bad');scheduleRetry();}},12000);
+    c.on('open',()=>{clearTimeout(to);rEver=true;rRetry=0;rstat('وصل شدی','ok');$('rconnect').classList.add('hidden');});
+    c.on('data',onState);
+    c.on('close',()=>{if(peer!==rPeer) return;rstat('اتصال قطع شد؛ دوباره وصل می‌شم…','bad');scheduleRetry();});
+  });
+  peer.on('error',e=>{
+    if(peer!==rPeer) return;
+    if(e.type==='peer-unavailable'&&!rEver){rWant=false;rstat('این کد پیدا نشد. کد رو چک کن.','bad');$('rconnect').classList.remove('hidden');}
+    else{rstat('خطا؛ دوباره تلاش می‌کنم…','bad');scheduleRetry();}
+  });
+}
+const rsend=m=>{if(rConn&&rConn.open) rConn.send(m);};
+function onState(m){
+  if(!m||m.t!=='s') return;
+  const now=$('now'); now.textContent='';
+  if(m.n){
+    const wrap=document.createElement('div');
+    const mk=(cls,t)=>{const s=document.createElement('span');s.className=cls;s.textContent=t+' ';return s;};
+    wrap.append(mk('o',m.b||''),mk('c',m.c||''),mk('o',m.a||'')); now.appendChild(wrap);
+  } else now.textContent='متنی لود نشده.';
+  $('rplay').textContent=!m.stage?'شروع':(m.run?'توقف':'ادامه');
+  $('rrec').classList.toggle('hidden',!m.cam);
+  $('rrec').textContent=m.rec?'توقف ضبط':'ضبط';
+  if(!seeking&&m.n) $('rseek').value=Math.round(m.i/m.n*1000);
+}
+document.querySelectorAll('#remote [data-c]').forEach(b=>b.onclick=()=>{
+  if(navigator.vibrate) navigator.vibrate(15);
+  const M={toggle:{c:'toggle'},back:{c:'jump',n:-5},fwd:{c:'jump',n:5},slow:{c:'speed',d:-10},fast:{c:'speed',d:10},
+    smaller:{c:'size',d:-4},bigger:{c:'size',d:4},restart:{c:'restart'},rec:{c:'rec'}};
+  rsend(M[b.dataset.c]);
+});
+$('rseek').addEventListener('input',e=>{
+  seeking=true; clearTimeout(seekFree); seekFree=setTimeout(()=>{seeking=false;},1200);
+  clearTimeout(seekT); const f=e.target.value/1000;
+  seekT=setTimeout(()=>rsend({c:'seek',f}),80);
+});
+$('rgo').onclick=()=>{rEver=false;rRetry=0;remoteConnect($('rcode').value);};
+$('rcode').addEventListener('keydown',e=>{if(e.key==='Enter'){rEver=false;rRetry=0;remoteConnect($('rcode').value);}});
+$('toRemote').onclick=showRemote;
+$('rexit').onclick=()=>{
+  rWant=false; clearTimeout(rTimer); if(rPeer){try{rPeer.destroy();}catch(e){} rPeer=null;} rConn=null;
+  rstat('به گوشی اصلی وصل نیستی.'); $('rconnect').classList.remove('hidden');
+  $('remote').classList.add('hidden'); $('setup').classList.remove('hidden'); $('dock').classList.remove('hidden');
+};
+
+/* ================= زمان هدف ================= */
+$('fitBtn').onclick=()=>{
+  const st=stats(src.value), msg=$('fitMsg');
+  const T=(+toLat($('tm').value)||0)*60+(+toLat($('ts').value)||0);
+  if(!st.n){msg.textContent='اول یه متن بنویس.';return;}
+  if(T<=0){msg.textContent='زمان هدف رو وارد کن.';return;}
+  const avail=T-st.P*(+pm.value)-st.H;
+  if(avail<=0){msg.textContent='این زمان به مکث‌ها هم نمی‌رسه؛ مکث رو کم کن یا زمان رو بیشتر بذار.';return;}
+  const raw=Math.round(st.n*60/avail), sp=Math.max(40,Math.min(300,raw));
+  setVal('speed',sp);
+  msg.textContent='سرعت شد '+fa(sp)+' کلمه در دقیقه؛ زمان خواندن حدود '+fmt(Math.round(estSecs(st,sp,+pm.value)))+(sp!==raw?' (این زمان با سرعت مجاز جور درنمیاد و نزدیک‌ترین مقدار انتخاب شد)':'')+'.';
+};
+
+/* ================= پشتیبان‌گیری ================= */
+function downloadBlob(blob,name){
+  const url=URL.createObjectURL(blob), a=document.createElement('a');
+  a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
+}
+function pickSettings(o){
+  const r={};
+  Object.keys(S).forEach(k=>{if(k in o&&typeof o[k]===typeof S[k]) r[k]=o[k];});
+  ['bg','hot'].forEach(k=>{if(k in r&&!/^#[0-9a-f]{6}$/i.test(r[k])) delete r[k];});
+  if('font' in r&&!FONTS[r.font]) delete r.font;
+  if('face' in r&&!['user','environment'].includes(r.face)) delete r.face;
+  return r;
+}
+$('exportBtn').onclick=()=>{
+  const data={app:'teleprompter',v:1,exported:new Date().toISOString(),scripts:lib.list,settings:S};
+  downloadBlob(new Blob([JSON.stringify(data,null,1)],{type:'application/json'}),'تلپرامپتر-پشتیبان-'+new Date().toISOString().slice(0,10)+'.json');
+  toast('فایل پشتیبان ذخیره شد ('+fa(lib.list.length)+' متن).');
+};
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=async e=>{
+  const f=e.target.files[0]; e.target.value=''; if(!f) return;
+  try{
+    const j=JSON.parse(await f.text());
+    const arr=Array.isArray(j)?j:(j&&Array.isArray(j.scripts)?j.scripts:null);
+    if(!arr) throw new Error('bad');
+    let add=0,skip=0;
+    arr.forEach(x=>{
+      if(!x||typeof x.text!=='string') return;
+      const title=typeof x.title==='string'?x.title:'';
+      if(lib.list.some(y=>y.text===x.text&&y.title===title)){skip++;return;}
+      lib.list.push({id:uid(),title,text:x.text}); add++;
+    });
+    saveLib(); renderLib();
+    if(j&&j.settings&&typeof j.settings==='object'&&!Array.isArray(j.settings)&&confirm('تنظیمات (رنگ، سرعت و...) هم از فایل جایگزین بشه؟')){
+      Object.assign(S,pickSettings(j.settings)); applyS(); save();
+    }
+    toast(fa(add)+' متن اضافه شد'+(skip?' و '+fa(skip)+' متن تکراری رد شد':'')+'.');
+  }catch(err){toast('این فایل پشتیبان معتبر نیست.');}
+};
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist();}catch(e){}
+
+/* ================= نصب برنامه ================= */
+let deferredInstall=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;$('installBtn').classList.remove('hidden');});
+window.addEventListener('appinstalled',()=>{deferredInstall=null;$('installBtn').classList.add('hidden');toast('برنامه نصب شد.');});
+$('installBtn').onclick=async()=>{
+  if(!deferredInstall) return;
+  deferredInstall.prompt(); try{await deferredInstall.userChoice;}catch(e){}
+  deferredInstall=null; $('installBtn').classList.add('hidden');
+};
+(function(){
+  const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  const standalone=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone;
+  if(ios&&!standalone) $('iosHint').classList.remove('hidden');
+})();
+/* مانیفست داخل خود فایل ساخته می‌شه تا برنامه قابل نصب باشه (بدون فایل جدا) */
+(function(){
+  if(!/^https?:$/.test(location.protocol)) return;
+  const base=location.href.split(/[?#]/)[0];
+  const ic192=document.querySelector('link[rel="icon"][sizes="192x192"]').href;
+  const ic512='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAQAElEQVR4nOzdaYxlaVnA8ffeW3epW3t1VXXP9DI9PTM9+zAKuECMYiBRlJCYoHGJicsHl6hxwUS/iCFR0IDygUT8gBqNLG4okRBEQCEgAsPOQM/S09PTa3XXvt66iwfFCJGlu+ucU0U/v186lf58c577P+d9zzl3aOb4AwmAeKoJgJAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACAoAQAISgAAghIAgKAEACCoocQ+UKvVR8bHms3herPVbLYajValWklwsxj0B53O1vb21s529ndzfWW119tJ7DUB2EvtkdGJ6dmJ6ZmxsYlK1dUYUQz6/dWV5eWFK0uL85vra4k9Upk5/kCidGMTU0fvuHt0dDxBbGsry2efemx1aSFROgEoW3tk7Ngdd49PTifgfy0vXjl7+vGNtZVEiWrtyblEKQaDwZHjd95xz4Ot4XYCvkw2FLOHDmf/WVlaqFRsgJVEAEpSrdVO3vfw3C1HHNzwVWWjkV0Zj45N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';
+  const man={name:'تلپرامپتر',short_name:'تلپرامپتر',description:'تلپرامپتر فارسی؛ کلمه‌به‌کلمه، با دوربین و ریموت',
+    lang:'fa',dir:'rtl',id:base,start_url:base,scope:base,display:'standalone',display_override:['fullscreen','standalone'],
+    background_color:'#0e1620',theme_color:'#0e1620',
+    icons:[{src:ic192,sizes:'192x192',type:'image/png',purpose:'any'},{src:ic512,sizes:'512x512',type:'image/png',purpose:'any maskable'}]};
+  const l=document.createElement('link'); l.rel='manifest';
+  l.href=URL.createObjectURL(new Blob([JSON.stringify(man)],{type:'application/manifest+json'}));
+  document.head.appendChild(l);
+})();
+
+/* ================= راه‌اندازی ================= */
+function applyS(){
+  speed.value=S.v; size.value=S.z; pm.value=S.pm; mirror.checked=!!S.m; $('guideOn').checked=S.guide!==false;
+  $('cbg').value=S.bg; $('chot').value=S.hot; $('fontSel').value=FONTS[S.font]?S.font:'vazir';
+  $('camOn').checked=!!S.cam; $('face').value=S.face; ov.value=S.ov; $('auto').checked=!!S.auto;
+  $('tw').value=S.tw; $('lh').value=S.lh;
+  ['speed','size','pm','ov','tw','lh'].forEach(id=>$(id+'2').value=$(id).value);
+  applyTheme(); refresh();
+}
+loadLib(); openScript(lib.cur);
+applyS();
+const rp=new URLSearchParams(location.search).get('remote');
+if(rp){showRemote();$('rcode').value=cleanCode(rp);remoteConnect(rp);}
+</script>
+</body>
+</html>
